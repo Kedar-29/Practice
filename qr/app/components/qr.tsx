@@ -53,27 +53,35 @@ export default function QRLabelSheet({ data }: QRProps) {
               background: "#fff",
             }}
           >
-            {/* QR Code on the left */}
+            {/* QR Code on the left (50%) */}
             <div
               style={{
-                flex: "0 0 33%",
+                flex: "0 0 50%",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
               }}
             >
-              <QRCode value={qrValue} size={50} />
+              <QRCode value={qrValue} size={80} /> {/* increased size */}
             </div>
 
-            {/* Text on the right */}
-            <div style={{ flex: "1", marginLeft: "3mm" }}>
-              <p style={{ fontSize: "9pt", fontWeight: "bold", margin: 0 }}>
+            {/* Text on the right (50%) */}
+            <div
+              style={{
+                flex: "0 0 50%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                marginLeft: "2mm",
+              }}
+            >
+              <p style={{ fontSize: "10pt", fontWeight: "bold", margin: 0 }}>
                 {item.product_name}
               </p>
-              <p style={{ fontSize: "8pt", margin: 0 }}>
+              <p style={{ fontSize: "9pt", margin: 0 }}>
                 Code: {item.product_code}
               </p>
-              <p style={{ fontSize: "8pt", margin: 0 }}>
+              <p style={{ fontSize: "9pt", margin: 0 }}>
                 Shellwing: {item.shellwing_code}
               </p>
             </div>
